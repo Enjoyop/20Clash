@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ClashofClans.Files.CsvReader
@@ -9,7 +9,7 @@ namespace ClashofClans.Files.CsvReader
 
         public Column()
         {
-            _values = new List<string>();
+            this._values = new List<string>();
         }
 
         public static int GetArraySize(int offset, int nOffset)
@@ -20,19 +20,23 @@ namespace ClashofClans.Files.CsvReader
         public void Add(string value)
         {
             if (value == null)
-                _values.Add(_values.Count > 0 ? _values.Last() : string.Empty);
+            {
+                this._values.Add(this._values.Count > 0 ? this._values.Last() : string.Empty);
+            }
             else
-                _values.Add(value);
+            {
+                this._values.Add(value);
+            }
         }
 
         public string Get(int row)
         {
-            return _values[row];
+            return this._values[row];
         }
 
         public int GetSize()
         {
-            return _values.Count;
+            return this._values.Count;
         }
     }
 }
